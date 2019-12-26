@@ -12,10 +12,10 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Button,
+  Text,
   StatusBar,
 } from 'react-native';
-
+import PlaidLink from 'react-native-plaid-link-sdk';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 class App extends Component {
@@ -26,10 +26,6 @@ class App extends Component {
     console.log('Platform :', Platform.OS);
   }
 
-  onPressLinkBank = () => {
-    alert('Bank Link Button Pressed');
-  };
-
   render() {
     return (
       <>
@@ -39,9 +35,18 @@ class App extends Component {
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
             <View style={styles.body}>
-              <Button
-                title="Link Bank Account"
-                onPress={this.onPressLinkBank}></Button>
+              <PlaidLink
+                clientName="TestApp"
+                publicKey="1f83e23b2a38b38823251d1afa7eb1"
+                env="sandbox"
+                onSuccess={data => console.log('success: ', data)}
+                onExit={data => console.log('exit: ', data)}
+                product={['auth']}
+                language="en"
+                countryCodes={['US']}
+                webviewRedirectUri="yourAppName://redirect">
+                <Text style={{paddingVertical: 10}}>Add Bank Account</Text>
+              </PlaidLink>
             </View>
           </ScrollView>
         </SafeAreaView>

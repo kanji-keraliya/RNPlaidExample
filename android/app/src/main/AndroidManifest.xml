@@ -21,6 +21,24 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+			<activity android:name="com.plaid.link.LinkActivity" />
+			<activity android:name="com.plaid.link.redirect.LinkRedirectActivity">
+				<intent-filter android:autoVerify="true">
+					<action android:name="android.intent.action.VIEW" />
+
+					<category android:name="android.intent.category.DEFAULT" />
+					<category android:name="android.intent.category.BROWSABLE" />
+
+					<data
+						android:host="redirect"
+						android:scheme="yourappname" />
+				</intent-filter>
+			</activity>
+			
+			<meta-data
+				android:name="com.plaid.link.public_key"
+				android:value="1f83e23b2a38b38823251d1afa7eb1" />
     </application>
 
 </manifest>
