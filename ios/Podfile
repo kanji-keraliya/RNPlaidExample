@@ -34,8 +34,8 @@ target 'RNPlaidExample' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-
-  pod 'react-native-plaid-link-sdk', :path => '../node_modules/react-native-plaid-link-sdk'
+  pod 'Plaid', '~> 1.1.25'
+  # pod 'react-native-plaid-link-sdk', :path => '../node_modules/react-native-plaid-link-sdk'
 
   target 'RNPlaidExampleTests' do
     inherit! :search_paths
