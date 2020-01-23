@@ -1,4 +1,4 @@
 # RNPlaidExample
 RNPlaidExample
 
-This is not working created only for Sample to find problem
+This is just a plaid example to provide plaid integration in react native
